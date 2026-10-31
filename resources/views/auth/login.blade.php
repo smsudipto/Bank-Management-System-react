@@ -1,0 +1,5 @@
+@extends('layouts.app')
+@section('title', 'Login | S4M Trust Bank')
+@section('auth_content')
+<div class="auth-shell"><div class="auth-card"><div class="brand auth-brand"><div class="brand-mark">N</div><div><span class="brand-name">S4M Trust Bank</span><span class="brand-subtitle">PERSONAL BANKING</span></div></div><h1>Welcome back</h1><p class="page-description">Sign in to manage your account securely.</p>@include('partials.messages')<form method="post" action="{{ route('login.store') }}">@csrf<label class="amount-label" for="email">Email</label><input class="auth-input" id="email" name="email" type="email" value="{{ old('email') }}" required autofocus><label class="amount-label" for="password">Password</label><input class="auth-input" id="password" name="password" type="password" required><button class="submit-button auth-submit" type="submit">Sign in</button></form><p class="auth-footer">New to S4M Trust Bank? <a href="{{ route('register') }}">Create an account</a></p></div></div>
+@endsection
